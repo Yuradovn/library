@@ -1963,13 +1963,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 var bookResource = new _api_book__WEBPACK_IMPORTED_MODULE_1__.default();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -39428,80 +39421,66 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "margin" },
-    _vm._l(_vm.books, function(b) {
-      return _c("vs-card", {
-        key: b.id,
-        attrs: { type: "3" },
-        scopedSlots: _vm._u(
-          [
-            {
-              key: "title",
-              fn: function() {
-                return [
-                  _c("h3", [_vm._v(_vm._s(b.title))]),
-                  _vm._v(" "),
-                  _c("h4", [_vm._v(_vm._s(b.author))])
-                ]
+  return _c("div", { staticClass: "margin" }, [
+    _c(
+      "div",
+      { staticClass: "books" },
+      _vm._l(_vm.books, function(b, i) {
+        return _c("vs-card", {
+          key: b.id,
+          staticClass: "book",
+          attrs: { type: "3" },
+          scopedSlots: _vm._u(
+            [
+              {
+                key: "title",
+                fn: function() {
+                  return [
+                    _c("h3", [_vm._v(_vm._s(b.title))]),
+                    _vm._v(" "),
+                    _c("h6", [_vm._v(_vm._s(b.author))])
+                  ]
+                },
+                proxy: true
               },
-              proxy: true
-            },
-            {
-              key: "img",
-              fn: function() {
-                return [_c("img", { attrs: { src: b.image, alt: "" } })]
+              {
+                key: "img",
+                fn: function() {
+                  return [_c("img", { attrs: { src: b.image, alt: "" } })]
+                },
+                proxy: true
               },
-              proxy: true
-            },
-            {
-              key: "text",
-              fn: function() {
-                return [
-                  _c("p", [
-                    _vm._v(
-                      "\n                " + _vm._s(b.descr) + "\n            "
-                    )
-                  ])
-                ]
+              {
+                key: "text",
+                fn: function() {
+                  return [
+                    _c("p", [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(b.descr.substring(0, 150)) +
+                          "...\n                "
+                      )
+                    ])
+                  ]
+                },
+                proxy: true
               },
-              proxy: true
-            },
-            {
-              key: "interactions",
-              fn: function() {
-                return [
-                  _c("vs-button", { attrs: { danger: "", icon: "" } }, [
-                    _c("i", { staticClass: "bx bx-heart" })
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "vs-button",
-                    {
-                      staticClass: "btn-chat",
-                      attrs: { shadow: "", primary: "" }
-                    },
-                    [
-                      _c("i", { staticClass: "bx bx-chat" }),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "span" }, [
-                        _vm._v("\n          54\n        ")
-                      ])
-                    ]
-                  )
-                ]
-              },
-              proxy: true
-            }
-          ],
-          null,
-          true
-        )
-      })
-    }),
-    1
-  )
+              {
+                key: "interactions",
+                fn: function() {
+                  return undefined
+                },
+                proxy: true
+              }
+            ],
+            null,
+            true
+          )
+        })
+      }),
+      1
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

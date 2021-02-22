@@ -1,30 +1,23 @@
 <template>
     <div class="margin">
-        <vs-card v-for="(b) in books" :key="b.id" type="3">
-            <template #title>
-                <h3>{{b.title}}</h3>
-                <h4>{{b.author}}</h4>
-            </template>
-            <template #img>
-                <img :src="b.image" alt="">
-            </template>
-            <template #text>
-                <p>
-                    {{b.descr}}
-                </p>
-            </template>
-            <template #interactions>
-                <vs-button danger icon>
-                    <i class='bx bx-heart'></i>
-                </vs-button>
-                <vs-button class="btn-chat" shadow primary>
-                    <i class='bx bx-chat' ></i>
-                    <span class="span">
-              54
-            </span>
-                </vs-button>
-            </template>
-        </vs-card>
+        <div class="books">
+            <vs-card class="book" v-for="(b, i) in books" :key="b.id"  type="3">
+                <template #title>
+                    <h3>{{b.title}}</h3>
+                    <h6>{{b.author}}</h6>
+                </template>
+                <template #img>
+                    <img :src="b.image" alt="">
+                </template>
+                <template #text>
+                    <p>
+                        {{b.descr.substring(0,150)}}...
+                    </p>
+                </template>
+                <template #interactions>
+                </template>
+            </vs-card>
+        </div>
     </div>
 </template>
 
