@@ -19,8 +19,23 @@
 
             </template>
             <template #right>
-                <vs-button flat >Login</vs-button>
-                <vs-button>Get Started</vs-button>
+                <div class="d-flex" v-if="!isAuth">
+                    <a href="/login" class="login">
+                        <vs-button flat>Login</vs-button>
+                    </a>
+                    <a href="/register" class="register">
+                        <vs-button flat>Register</vs-button>
+                    </a>
+                </div>
+            
+                 <div class="d-flex" v-else>
+                    <a href="/dashboard" class="dashboard">
+                        <vs-button flat>Dashboard</vs-button>
+                    </a>
+                    <a href="/logout" class="logout">
+                        <vs-button flat>Log out</vs-button>
+                    </a>
+                </div>
             </template>
         </vs-navbar>
     </div>
@@ -30,19 +45,27 @@
 import categoryResourse from '../api/category'
 const categoryResource = new categoryResourse
 export default{
+    props: {
+        isAuth: Boolean
+    },
     data () {
        return {
            categories: null,
-           active: ''
+           active: 'home'
        }
     },
+
+    mounted() {
+        this.getCategories()
+    },
+
     methods: {
         async getCategories() {
             const {data} = await categoryResource.list()
             this.categories = data
         },
-        handleCategory (id = null) {
 
+        handleCategory (id = null) {
             if (id == null) {
                 this.$router.push({path: '/list'}).then(()=>{
                     this.$root.$emit('category_changed')
@@ -55,9 +78,7 @@ export default{
             }
         }
     },
-    mounted() {
-        this.getCategories()
-    },
+    
     name: 'Menu'
 }
 </script>
