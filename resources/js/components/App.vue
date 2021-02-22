@@ -1,7 +1,7 @@
 <template>
     <div>
-        <Menu/>
-        <router-view></router-view>
+        <Menu :isAuth="this.$store.getters.isLoggedIn"/>
+        <router-view />
     </div>
 </template>
 
@@ -9,6 +9,10 @@
     import Menu from './Menu';
 
     export default{
+        mounted() {
+            this.$store.commit('setAuthUser', window.auth_user);
+            // console.log(this.$store.getters.isLoggedIn);
+        },
         name: 'App',
         components: {
             Menu

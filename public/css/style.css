@@ -5,3 +5,16 @@
 .books {
     text-align: center;
 }
+
+a {
+    color: rgb(37, 102, 177);
+    text-decoration: none;
+}
+
+a:hover{
+    color: #fff;
+}
+
+.vs-button__content{
+    font-size: 16px;
+}
