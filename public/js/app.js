@@ -1963,42 +1963,56 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 var bookResource = new _api_book__WEBPACK_IMPORTED_MODULE_1__.default();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      totalPages: 0,
+      page: 1,
       books: null
     };
   },
   methods: {
     getBooks: function getBooks() {
-      var _this = this;
+      var _arguments = arguments,
+          _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
-        var _yield$bookResource$l, data;
+        var page, _yield$bookResource$l, data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.next = 2;
+                page = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;
+                _context.next = 3;
                 return bookResource.list({
-                  category_id: _this.$route.query.category_id
+                  category_id: _this.$route.query.category_id,
+                  page: page
                 });
 
-              case 2:
+              case 3:
                 _yield$bookResource$l = _context.sent;
                 data = _yield$bookResource$l.data;
-                _this.books = data;
+                _this.books = data.data;
+                _this.totalPages = data.meta.last_page;
+                _this.page = data.meta.current_page;
+                console.log(data.meta.last_page);
 
-              case 5:
+              case 9:
               case "end":
                 return _context.stop();
             }
           }
         }, _callee);
       }))();
+    },
+    handlePageChange: function handlePageChange() {
+      this.getBooks(this.page);
     }
   },
   mounted: function mounted() {
@@ -39478,6 +39492,25 @@ var render = function() {
           )
         })
       }),
+      1
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "center" },
+      [
+        _c("vs-pagination", {
+          attrs: { circle: "", length: _vm.totalPages },
+          on: { input: _vm.handlePageChange },
+          model: {
+            value: _vm.page,
+            callback: function($$v) {
+              _vm.page = $$v
+            },
+            expression: "page"
+          }
+        })
+      ],
       1
     )
   ])

@@ -18,6 +18,9 @@
                 </template>
             </vs-card>
         </div>
+        <div class="center">
+            <vs-pagination circle v-model="page" :length="totalPages" @input="handlePageChange" />
+        </div>
     </div>
 </template>
 
@@ -27,13 +30,21 @@ const bookResource = new bookResourse
 export default {
     data () {
         return {
+            totalPages:0,
+            page:1,
             books: null
         }
     },
     methods: {
-        async getBooks() {
-            const {data} = await bookResource.list({category_id: this.$route.query.category_id})
-            this.books = data
+        async getBooks(page = 1) {
+            const {data} = await bookResource.list({category_id: this.$route.query.category_id, page})
+            this.books = data.data
+            this.totalPages = data.meta.last_page
+            this.page = data.meta.current_page
+            console.log(data.meta.last_page)
+        },
+        handlePageChange () {
+            this.getBooks(this.page)
         }
     },
     mounted() {

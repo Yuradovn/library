@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\BookResource;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -12,19 +13,17 @@ class BookController extends Controller
      * Display a listing of the resource.
      *
      * @param Request $request
-     * @return Book[]|\Illuminate\Database\Eloquent\Collection
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function index(Request $request)
     {
+        $bookQuery = Book::query();
         if ($request->category_id) {
             $category_id = $request->category_id;
             $category = Category::find($category_id);
-            $books = $category->books;
+            $bookQuery = $category->books();
         }
-        else {
-            $books = Book::all();
-        }
-        return $books;
+        return BookResource::collection($bookQuery->paginate(12));
     }
 
     /**
