@@ -2,21 +2,38 @@
     <div>
         <vs-navbar center-collapsed square v-model="active">
             <template #left>
-                <vs-navbar-item :active="active == 'home'" to="/" id="home">
-                    Home
+                <vs-navbar-item 
+                    :active="active == 'home'" 
+                    to="/" 
+                    id="home">
+                        Home
                 </vs-navbar-item >
                 <vs-navbar-group :active="active == 'list'">
                     Books
                     <template #items>
-                        <vs-navbar-item :active="active == 'list'" id="list" @click="handleCategory()">
+                        <vs-navbar-item 
+                            :active="active == 'list'" 
+                            id="list" 
+                            @click="handleCategory()">
                             All Categories
                         </vs-navbar-item>
-                        <vs-navbar-item v-for="(c) in categories" :key="c.id" :active="active == c.name" :id="c.name" @click="handleCategory(c.id)">
+                        <vs-navbar-item 
+                            v-for="(c) in categories" 
+                            :key="c.id" 
+                            :active="active == c.name" 
+                            :id="c.name" 
+                            @click="handleCategory(c.id)">
                             {{c.name}}
                         </vs-navbar-item>
                     </template>
                 </vs-navbar-group>
-
+                <vs-navbar-item 
+                    :active="active == 'yourbooks'" 
+                    to="/yourbooks" 
+                    id="yourbooks"
+                    v-if="isAuth">
+                        Your books
+                </vs-navbar-item >
             </template>
             <template #right>
                 <div class="d-flex" v-if="!isAuth">

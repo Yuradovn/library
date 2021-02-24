@@ -23,6 +23,8 @@ class BookController extends Controller
             $category = Category::find($category_id);
             $bookQuery = $category->books();
         }
+
+        
         return BookResource::collection($bookQuery->paginate(12));
     }
 
