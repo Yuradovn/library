@@ -1,29 +1,28 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
-use App\Http\Resources\BookResource;
-use App\Models\Book;
-use App\Models\Category;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Resources\BookResource;
+use App\Models\User;
+use App\Models\Book;
 
-class BookController extends Controller
+class UserBookController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
      * @param Request $request
-     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request) 
     {
         $bookQuery = Book::query();
-        if ($request->category_id) {
-            $category_id = $request->category_id;
-            $category = Category::find($category_id);
-            $bookQuery = $category->books();
+        if ($request->user_id) {
+            $user_id = $request->user_id;
+            $user = User::findOrFail($user_id);
+            $bookQuery = $user->books();
         }
-
         
         return BookResource::collection($bookQuery->paginate(12));
     }
