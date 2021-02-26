@@ -29,9 +29,9 @@
                 </vs-navbar-group>
                 <vs-navbar-item 
                     :active="active == 'yourbooks'" 
-                    to="/yourbooks" 
                     id="yourbooks"
-                    v-if="isAuth">
+                    v-if="isAuth"
+                    @click="handleUserBooks(user.id)">
                         Your books
                 </vs-navbar-item >
             </template>
@@ -60,10 +60,12 @@
 
 <script>
 import categoryResourse from '../api/category'
-const categoryResource = new categoryResourse
+const categoryResource = new categoryResourse;
+
 export default{
     props: {
-        isAuth: Boolean
+        isAuth: Boolean,
+        user: Object
     },
     data () {
        return {
@@ -73,7 +75,7 @@ export default{
     },
 
     mounted() {
-        this.getCategories()
+        this.getCategories();
     },
 
     methods: {
@@ -93,6 +95,10 @@ export default{
                     this.$root.$emit('category_changed')
                 })
             }
+        },
+
+        handleUserBooks(id) {
+            this.$router.push('/yourbooks/' + id);
         }
     },
     

@@ -41,15 +41,17 @@ export default {
 
     mounted() {
         this.getBooks();
+        this.$root.$on('user_changed', () => {
+            this.getBooks();
+        });
     },
 
     methods: {
         async getBooks(page = 1) {
-            const {data} = await userBookResource.list({page})
+            const {data} = await userBookResource.list({user_id: this.$route.params.id, page})
             this.books = data.data
             this.totalPages = data.meta.last_page
             this.page = data.meta.current_page
-            
         },
         handlePageChange() {
             this.getBooks(this.page);

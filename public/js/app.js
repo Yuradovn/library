@@ -1864,10 +1864,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
-    this.$store.commit('setAuthUser', window.auth_user); // console.log(this.$store.getters.isLoggedIn);
+    this.$store.commit('setAuthUser', window.auth_user);
   },
   name: 'App',
   components: {
@@ -2091,7 +2094,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 var categoryResource = new _api_category__WEBPACK_IMPORTED_MODULE_1__.default();
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
-    isAuth: Boolean
+    isAuth: Boolean,
+    user: Object
   },
   data: function data() {
     return {
@@ -2150,6 +2154,9 @@ var categoryResource = new _api_category__WEBPACK_IMPORTED_MODULE_1__.default();
           _this2.$root.$emit('category_changed');
         });
       }
+    },
+    handleUserBooks: function handleUserBooks(id) {
+      this.$router.push('/yourbooks/' + id);
     }
   },
   name: 'Menu'
@@ -2216,12 +2223,17 @@ var userBookResource = new _api_userBook__WEBPACK_IMPORTED_MODULE_1__.default();
     };
   },
   mounted: function mounted() {
+    var _this = this;
+
     this.getBooks();
+    this.$root.$on('user_changed', function () {
+      _this.getBooks();
+    });
   },
   methods: {
     getBooks: function getBooks() {
       var _arguments = arguments,
-          _this = this;
+          _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
         var page, _yield$userBookResour, data;
@@ -2233,15 +2245,16 @@ var userBookResource = new _api_userBook__WEBPACK_IMPORTED_MODULE_1__.default();
                 page = _arguments.length > 0 && _arguments[0] !== undefined ? _arguments[0] : 1;
                 _context.next = 3;
                 return userBookResource.list({
+                  user_id: _this2.$route.params.id,
                   page: page
                 });
 
               case 3:
                 _yield$userBookResour = _context.sent;
                 data = _yield$userBookResour.data;
-                _this.books = data.data;
-                _this.totalPages = data.meta.last_page;
-                _this.page = data.meta.current_page;
+                _this2.books = data.data;
+                _this2.totalPages = data.meta.last_page;
+                _this2.page = data.meta.current_page;
 
               case 8:
               case "end":
@@ -2501,6 +2514,9 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_6__.default.Store({
   getters: {
     isLoggedIn: function isLoggedIn(state) {
       return state.user !== null;
+    },
+    getUser: function getUser(state) {
+      return state.user;
     }
   }
 });
@@ -2587,7 +2603,7 @@ __webpack_require__.r(__webpack_exports__);
     name: 'list',
     component: _components_List__WEBPACK_IMPORTED_MODULE_2__.default
   }, {
-    path: '/yourbooks',
+    path: '/yourbooks/:id',
     name: 'yourbooks',
     component: _components_UserBooks__WEBPACK_IMPORTED_MODULE_1__.default
   }]
@@ -7101,7 +7117,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.margin[data-v-1c86b044] {\n  margin-top: 50px;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.margin[data-v-1c86b044] {\r\n  margin-top: 50px;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -39605,7 +39621,12 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("Menu", { attrs: { isAuth: this.$store.getters.isLoggedIn } }),
+      _c("Menu", {
+        attrs: {
+          isAuth: this.$store.getters.isLoggedIn,
+          user: this.$store.getters.getUser
+        }
+      }),
       _vm._v(" "),
       _c("router-view")
     ],
@@ -39856,8 +39877,12 @@ var render = function() {
                       {
                         attrs: {
                           active: _vm.active == "yourbooks",
-                          to: "/yourbooks",
                           id: "yourbooks"
+                        },
+                        on: {
+                          click: function($event) {
+                            return _vm.handleUserBooks(_vm.user.id)
+                          }
                         }
                       },
                       [_vm._v("\n                    Your books\n            ")]
