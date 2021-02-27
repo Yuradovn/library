@@ -1866,7 +1866,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
+  beforeMount: function beforeMount() {
     this.$store.commit('setAuthUser', window.auth_user); // console.log(this.$store.getters.isLoggedIn);
   },
   name: 'App',
@@ -2004,9 +2004,8 @@ var bookResource = new _api_book__WEBPACK_IMPORTED_MODULE_1__.default();
                 _this.books = data.data;
                 _this.totalPages = data.meta.last_page;
                 _this.page = data.meta.current_page;
-                console.log(data.meta.last_page);
 
-              case 9:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -2021,6 +2020,7 @@ var bookResource = new _api_book__WEBPACK_IMPORTED_MODULE_1__.default();
   mounted: function mounted() {
     var _this2 = this;
 
+    console.log(this.$store.state.user);
     this.getBooks();
     this.$root.$on('category_changed', function () {
       _this2.getBooks();
