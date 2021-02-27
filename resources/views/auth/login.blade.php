@@ -1,43 +1,44 @@
-<!DOCTYPE html>
-<html lang="en"> 
-    <head>
-        <meta charset="utf-8">
-        <title>Paper Stack</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('css/login.css') }}" />
-    </head>
-    <body>
-        <div class="container">
-        <section id="content">
-        <x-jet-validation-errors class="mb-4" />
+@extends('layouts.login_layout')
 
-            @if (session('status'))
-                <div class="mb-4 font-medium text-sm text-green-600">
-                    {{ session('status') }}
-                </div>
-            @endif
+@section('form')
+<!-- Sing in  Form -->
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="{{ asset('images/signin-image.jpg') }}" alt="sing up image"></figure>
+                <a href="/register" class="signup-image-link">Create an account</a>
+            </div>
 
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-            <h1>Login Form</h1>
-            <div>
-                <input type="email" placeholder="Email" id="email" name="email" :value="old('email')" required autofocus/>
-                
-            </div>
-            <div>
-                <input type="password" placeholder="Password" name="password" required id="password" autocomplete="current-password"/>
-            </div>
-            <div>
-                <input type="submit" value="Log in" />
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
+            <div class="signin-form">
+                <h2 class="form-title">Sign in</h2>
+                <x-jet-validation-errors class="mb-4" />
+
+                @if (session('status'))
+                    <div class="mb-4 font-medium text-sm text-green-600">
+                        {{ session('status') }}
+                    </div>
                 @endif
-                <a href="#">Register</a>
+
+                <form method="POST" action="{{ route('login') }}" class="register-form" id="login-form">
+                @csrf   
+                    <div class="form-group">
+                        <label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                        <input type="email" name="email" id="email" placeholder="Your Email" :value="old('email')" required autofocus/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password"><i class="zmdi zmdi-lock"></i></label>
+                        <input type="password" name="password" id="password" placeholder="Password" required id="password" autocomplete="current-password"/>
+                    </div>
+                    <div class="form-group form-button">
+                        <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                        @if (Route::has('password.request'))
+                            <a class="signup-image-link forgot_pass" href="{{ route('password.request') }}">Forgot your password?</a>
+                        @endif
+                    </div>
+                </form>
             </div>
-            </form><!-- form -->
-            
-        </section><!-- content -->
-        </div><!-- container -->
-    </body>
-</html>
+        </div>
+    </div>
+</section>
+@endsection

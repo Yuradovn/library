@@ -1,9 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\UserBookController;
+
 use App\Models\Book;
 
 /*
@@ -23,4 +24,5 @@ Route::get('/allbooks', function () {
 Route::group(['middleware' => []], function () {
     Route::apiResource('categories', CategoryController::class);
     Route::apiResource('books', BookController::class);
+    Route::apiResource('userbooks', UserBookController::class);
 });

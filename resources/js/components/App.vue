@@ -1,6 +1,9 @@
 <template>
     <div>
-        <Menu :isAuth="this.$store.getters.isLoggedIn"/>
+        <Menu 
+            :isAuth="this.$store.getters.isLoggedIn"
+            :user="this.$store.getters.getUser"
+        />
         <router-view />
     </div>
 </template>
@@ -11,7 +14,6 @@
     export default{
         beforeMount() {
             this.$store.commit('setAuthUser', window.auth_user);
-            // console.log(this.$store.getters.isLoggedIn);
         },
         name: 'App',
         components: {

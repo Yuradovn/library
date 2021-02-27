@@ -2,21 +2,38 @@
     <div>
         <vs-navbar center-collapsed square v-model="active">
             <template #left>
-                <vs-navbar-item :active="active == 'home'" to="/" id="home">
-                    Home
+                <vs-navbar-item 
+                    :active="active == 'home'" 
+                    to="/" 
+                    id="home">
+                        Home
                 </vs-navbar-item >
                 <vs-navbar-group :active="active == 'list'">
                     Books
                     <template #items>
-                        <vs-navbar-item :active="active == 'list'" id="list" @click="handleCategory()">
+                        <vs-navbar-item 
+                            :active="active == 'list'" 
+                            id="list" 
+                            @click="handleCategory()">
                             All Categories
                         </vs-navbar-item>
-                        <vs-navbar-item v-for="(c) in categories" :key="c.id" :active="active == c.name" :id="c.name" @click="handleCategory(c.id)">
+                        <vs-navbar-item 
+                            v-for="(c) in categories" 
+                            :key="c.id" 
+                            :active="active == c.name" 
+                            :id="c.name" 
+                            @click="handleCategory(c.id)">
                             {{c.name}}
                         </vs-navbar-item>
                     </template>
                 </vs-navbar-group>
-
+                <vs-navbar-item 
+                    :active="active == 'yourbooks'" 
+                    id="yourbooks"
+                    v-if="isAuth"
+                    @click="handleUserBooks(user.id)">
+                        Your books
+                </vs-navbar-item >
             </template>
             <template #right>
                 <div class="d-flex" v-if="!isAuth">
@@ -43,10 +60,12 @@
 
 <script>
 import categoryResourse from '../api/category'
-const categoryResource = new categoryResourse
+const categoryResource = new categoryResourse;
+
 export default{
     props: {
-        isAuth: Boolean
+        isAuth: Boolean,
+        user: Object
     },
     data () {
        return {
@@ -56,7 +75,7 @@ export default{
     },
 
     mounted() {
-        this.getCategories()
+        this.getCategories();
     },
 
     methods: {
@@ -76,6 +95,10 @@ export default{
                     this.$root.$emit('category_changed')
                 })
             }
+        },
+
+        handleUserBooks(id) {
+            this.$router.push('/yourbooks/' + id);
         }
     },
     

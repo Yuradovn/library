@@ -1,6 +1,6 @@
 import VueRouter from 'vue-router';
 import Home from '../components/Home';
-import Hello from '../components/Hello';
+import UserBooks from '../components/UserBooks';
 import List from "../components/List";
 
 export default new VueRouter ({
@@ -12,15 +12,15 @@ export default new VueRouter ({
         },
 
         {
-            path: '/hello',
-            name: 'hello',
-            component: Hello
-        },
-
-        {
             path: '/list',
             name: 'list',
             component: List
+        },
+
+        {
+            path: '/yourbooks/:id',
+            name: 'yourbooks',
+            component: UserBooks
         }
 
     ]
