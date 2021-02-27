@@ -18,7 +18,7 @@ export default new VueRouter ({
         },
 
         {
-            path: '/yourbooks/:id',
+            path: '/yourbooks',
             name: 'yourbooks',
             component: UserBooks
         }

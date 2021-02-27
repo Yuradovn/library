@@ -2,120 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9454862e-ed76-495d-8006-548c17e281c0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/UserBookController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_02_23_153843_create_book_user_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/material-icon/css/material-design-iconic-font.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/material-icon/css/material-design-iconic-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/material-icon/fonts/Material-Design-Iconic-Font.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/material-icon/fonts/Material-Design-Iconic-Font.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-300italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-500italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-600.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-600.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-600.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-600.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-600.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-700italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-800italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/poppins-v5-latin-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-700italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-italic.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-italic.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-italic.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-italic.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-regular.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/fonts/poppins/roboto-condensed-v16-latin-regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/signin-image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/signup-image.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/api/userBook.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/UserBooks.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/login_layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Book.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Book.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_02_20_142804_create_sessions_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/BookSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/BookSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/UserSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/UserSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Hello.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/List.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/List.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Menu.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Menu.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/UserBooks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/UserBooks.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/router/route.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router/route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,6 +176,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -305,7 +199,7 @@
       <workItem from="1613921501334" duration="12181000" />
       <workItem from="1614001722559" duration="9602000" />
       <workItem from="1614187638703" duration="6000" />
-      <workItem from="1614431226363" duration="3489000" />
+      <workItem from="1614431226363" duration="7180000" />
     </task>
     <servers />
   </component>
@@ -320,14 +214,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="624" y="214" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614005019356" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614449759105">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614451440229">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614449759105" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614451440229" />
     <state x="687" y="214" key="FileChooserDialogImpl" timestamp="1614004366820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="687" y="214" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1614004366820" />
+    <state x="336" y="77" key="SettingsEditor" timestamp="1614449823492">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="336" y="77" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1614449823492" />
     <state x="539" y="5" width="840" height="1034" key="search.everywhere.popup" timestamp="1614447845944">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

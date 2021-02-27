@@ -1,8 +1,6 @@
 <template>
     <div>
-        <Menu 
-            :isAuth="this.$store.getters.isLoggedIn"
-            :user="this.$store.getters.getUser"
+        <Menu
         />
         <router-view />
     </div>

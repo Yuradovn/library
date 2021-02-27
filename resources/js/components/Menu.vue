@@ -2,36 +2,36 @@
     <div>
         <vs-navbar center-collapsed square v-model="active">
             <template #left>
-                <vs-navbar-item 
-                    :active="active == 'home'" 
-                    to="/" 
+                <vs-navbar-item
+                    :active="active == 'home'"
+                    to="/"
                     id="home">
                         Home
                 </vs-navbar-item >
                 <vs-navbar-group :active="active == 'list'">
                     Books
                     <template #items>
-                        <vs-navbar-item 
-                            :active="active == 'list'" 
-                            id="list" 
+                        <vs-navbar-item
+                            :active="active == 'list'"
+                            id="list"
                             @click="handleCategory()">
                             All Categories
                         </vs-navbar-item>
-                        <vs-navbar-item 
-                            v-for="(c) in categories" 
-                            :key="c.id" 
-                            :active="active == c.name" 
-                            :id="c.name" 
+                        <vs-navbar-item
+                            v-for="(c) in categories"
+                            :key="c.id"
+                            :active="active == c.name"
+                            :id="c.name"
                             @click="handleCategory(c.id)">
                             {{c.name}}
                         </vs-navbar-item>
                     </template>
                 </vs-navbar-group>
-                <vs-navbar-item 
-                    :active="active == 'yourbooks'" 
+                <vs-navbar-item
+                    :active="active == 'yourbooks'"
                     id="yourbooks"
                     v-if="isAuth"
-                    @click="handleUserBooks(user.id)">
+                    @click="handleUserBooks()">
                         Your books
                 </vs-navbar-item >
             </template>
@@ -44,7 +44,7 @@
                         <vs-button flat>Register</vs-button>
                     </a>
                 </div>
-            
+
                  <div class="d-flex" v-else>
                     <a href="/dashboard" class="dashboard">
                         <vs-button flat>Dashboard</vs-button>
@@ -63,12 +63,9 @@ import categoryResourse from '../api/category'
 const categoryResource = new categoryResourse;
 
 export default{
-    props: {
-        isAuth: Boolean,
-        user: Object
-    },
     data () {
        return {
+           isAuth: this.$store.getters.isLoggedIn,
            categories: null,
            active: 'home'
        }
@@ -97,11 +94,11 @@ export default{
             }
         },
 
-        handleUserBooks(id) {
-            this.$router.push('/yourbooks/' + id);
+        handleUserBooks() {
+            this.$router.push('/yourbooks');
         }
     },
-    
+
     name: 'Menu'
 }
 </script>

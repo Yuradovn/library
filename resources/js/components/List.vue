@@ -47,7 +47,6 @@ export default {
         }
     },
     mounted() {
-        console.log(this.$store.state.user);
       this.getBooks()
       this.$root.$on('category_changed', ()=>{
           this.getBooks()

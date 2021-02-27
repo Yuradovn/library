@@ -10,7 +10,7 @@
           <img :src="b.image" alt="" />
         </template>
         <template #text>
-          <p>{{ b.descr }}...</p>
+          <p>{{b.descr.substring(0,150)}}...</p>
         </template>
         <template #interactions> </template>
       </vs-card>
@@ -30,12 +30,13 @@
 import userBookResourse from '../api/userBook';
 const userBookResource = new userBookResourse;
 export default {
-  
+
     data() {
         return {
             totalPages: 0,
             page: 1,
             books: null,
+            user_id: this.$store.state.user.id
         };
     },
 
@@ -48,7 +49,7 @@ export default {
 
     methods: {
         async getBooks(page = 1) {
-            const {data} = await userBookResource.list({user_id: this.$route.params.id, page})
+            const {data} = await userBookResource.list({user_id: this.user_id, page})
             this.books = data.data
             this.totalPages = data.meta.last_page
             this.page = data.meta.current_page
@@ -57,7 +58,7 @@ export default {
             this.getBooks(this.page);
         },
   },
-  
+
   name: "UserBooks",
 };
 </script>
