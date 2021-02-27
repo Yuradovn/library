@@ -9,7 +9,7 @@
     import Menu from './Menu';
 
     export default{
-        mounted() {
+        beforeMount() {
             this.$store.commit('setAuthUser', window.auth_user);
             // console.log(this.$store.getters.isLoggedIn);
         },

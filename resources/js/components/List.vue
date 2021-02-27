@@ -41,13 +41,13 @@ export default {
             this.books = data.data
             this.totalPages = data.meta.last_page
             this.page = data.meta.current_page
-            console.log(data.meta.last_page)
         },
         handlePageChange () {
             this.getBooks(this.page)
         }
     },
     mounted() {
+        console.log(this.$store.state.user);
       this.getBooks()
       this.$root.$on('category_changed', ()=>{
           this.getBooks()
